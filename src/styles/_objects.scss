@@ -1,0 +1,25 @@
+.objects {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 1420px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  .objects {
+    padding: 0 20px;
+  
+    &__wrapper {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+}

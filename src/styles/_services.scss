@@ -1,0 +1,24 @@
+.services {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 1420px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  .services {
+    padding: 0 20px;
+  
+    &__wrapper {
+      justify-content: center;
+    }
+  }
+}

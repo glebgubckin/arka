@@ -1,0 +1,162 @@
+---
+import ObjectCard from '../components/ObjectCard/ObjectCard'
+import Title from '../components/Title/Title'
+import Modal from '../components/Modal/Modal'
+import about from '../assets/images/about.png'
+import objectCard1 from '../assets/images/objectCard1.png'
+import objectCard2 from '../assets/images/objectCard2.png'
+import map from '../assets/images/map.png'
+import ServiceCard from '../components/ServiceCard/ServiceCard'
+import Form from '../components/Form/Form'
+import Header from '../sections/Header.astro'
+import Footer from '../sections/Footer.astro'
+import '../styles/index.scss'
+---
+
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Арка - Агенство недвижимости премиум класса в Москве</title>
+	</head>
+	<body>
+		<div class="hero">
+			<Header />
+			<div class="hero__wrapper">
+				<h1>Агенство недвижимости премиум класса в Москве</h1>
+				<Modal client:idle>
+					<span class="modal__title">Отправить заявку</span>
+					<div class="modal__block">
+						<label style="modal__label">Имя</label>
+						<input class="modal__input" type="text">
+					</div>
+					<div class="modal__block">
+						<label style="modal__label">Телефон</label>
+						<input class="modal__input" type="text">
+					</div>
+					<div class="modal__block">
+						<label style="modal__label">Email</label>
+						<input class="modal__input" type="text">
+					</div>
+					<button class="modal__btn">Отправить</button>
+				</Modal>
+			</div>
+		</div>
+		<Title id="about" client:visible title="О компании" />
+		<div class="about">
+			<div class="about__wrapper">
+				<img class="about__img" src={about} alt="О нас">
+				<div class="about__info">
+					<p>
+						Мы — надежная и успешная компания, стабильно работающая 
+						на рынке недвижимости Москвы и Московской области 
+						с января 1997 года. За этот период мы накопили бесценный 
+						опыт работы и за короткий срок стала одной из самых 
+						динамично развивающихся компаний, оказывающих услуги на рынке недвижимости
+					</p>
+					<p>
+						Более 20 лет мы являемся действительным членом Российской Гильдии 
+						Риэлторов – наиболее авторитетного в России профессионального 
+						сообщества участников рынка недвижимости, регулярно принимая участие во всех 
+						проводимых ею мероприятиях.</p>
+				</div>
+			</div>
+		</div>
+		<Title id="objects" client:visible title="Объекты" />
+		<div class="objects">
+			<div class="objects__wrapper">
+				<ObjectCard
+				src={objectCard2}
+				alt="ЖК"
+				title="ЖК Familia"
+				minPrice="21 120 000"
+				client:visible
+				/>
+				<ObjectCard
+					src={objectCard1}
+					alt="Клубный дом Наследие"
+					title="Клубный дом Наследие"
+					minPrice="16 420 000"
+					client:visible
+				/>
+			</div>
+		</div>
+		<Title id="services" client:visible title="Услуги" />
+		<div class="services">
+			<div class="services__wrapper">
+				<ServiceCard 
+					client:visible 
+					title="Продажа" 
+					text={`Мы поможем Вам продать квартиру 
+					или иной объект недвижимости 
+					по наиболее выгодной цене и 
+					с наименьшими затратами времени, 
+					предоставив целый комплекс услуг`}
+				/>
+				<ServiceCard 
+					client:visible 
+					title="Покупка" 
+					text={`Подберём оптимальный вариант 
+					сделки в специализированных СМИ, 
+					организуем просмотры, переговоры 
+					с продавцом, подписание договора 
+					о порядке проведения сделки`}
+				/>
+				<ServiceCard 
+					client:visible 
+					title="Сопровождение сделок" 
+					text={`Собираем и оформляем все необходимые 
+					для проведения сделки документы (договор 
+					приватизации жилплощади, подлинники плана 
+					объекта недвижимости и т.д.)`}
+				/>
+				<ServiceCard 
+					client:visible 
+					title="Срочный выкуп квартир" 
+					text={`Выкупим Вашу квартиру за несколько 
+					дней за счет оценки Вашей квартиры, 
+					организация передачи квартиры собственнику, 
+					проведение безопасных взаиморасчетов и др.`}
+				/>
+				<ServiceCard 
+					client:visible 
+					title="Ипотечное кредитование" 
+					text={`Помогаем получить кредиты тем, 
+					кому не хватает средств на единовременную 
+					покупку недвижимости в Москве и 
+					Московской области.`}
+				/>
+				<ServiceCard 
+					client:visible 
+					title="Консультация" 
+					text={`Наши специалисты бесплатно проконсультируют Вас 
+						по юридическим и жилищным вопросам: оформление 
+						наследства, приватизация, расселение и т.д.`}
+				/>
+			</div>
+		</div>
+		<Title id="contacts" client:visible title="Контакты" />
+		<div class="contacts">
+			<div class="contacts__wrapper">
+				<img width="580" height="580" src={map} alt="Карта" class="contacts__img">
+				<div class="contacts__info">
+					<div class="contacts__text">
+						<p>
+							<b>Офис на Суворовской находится по адресу:
+							м. Преображенская площадь</b><br>
+							Адрес: 107023, г. Москва, ул. Суворовская, д.27, 3 этаж
+						</p>
+						<p><b>Телефоны:</b> +7 (495) 647-00-00, +7 (495) 627-77-77</p>
+						<p><b>Работаем в будние дни</b> с 9.00 до 21.00, сб с 10.00 
+							до 18.00</p>
+						<p><b>Электронная почта:</b> info@arka.ru</p>
+					</div>
+					<Form />
+				</div>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>
