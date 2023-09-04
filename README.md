@@ -12,6 +12,4 @@ npm run preview
 ```
 Приложение будет запущено по адресу *http://localhost:3000*
 ## Demo
-```
-https://arka-mocha.vercel.app/
-```
+[https://arka-mocha.vercel.app](https://arka-mocha.vercel.app)
